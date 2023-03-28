@@ -4,7 +4,8 @@ import java.time.LocalTime;
 import java.time.LocalDate;
 
 public class Entrada {
- private static int id = 0;
+ private static int count = 0;
+ private int id;
  private String show;
  private LocalDate fecha;
  private LocalTime hora;
@@ -16,7 +17,8 @@ public class Entrada {
  
  
  public Entrada(String show,LocalDate fecha,LocalTime hora, int duracion) {
-	 id = id + 1;
+	 coun++;
+	 id = count;
 	 this.show = show;
 	 this.hora = hora;
 	 this.fecha = fecha;
@@ -24,7 +26,8 @@ public class Entrada {
  }
  
  public Entrada() {
-	 id = id + 1;
+	 count++;
+	 id = count;
  }
  
 //getters y setters
@@ -76,7 +79,7 @@ public void setDuracion(int duracion) {
 //metodos
 
 public static void reiniciarID() {
-    id = 0;
+    count = 0;
 }
 
 public static Entrada crearEntrada(String show,LocalDate fecha,LocalTime hora, int duracion) {
@@ -85,7 +88,7 @@ public static Entrada crearEntrada(String show,LocalDate fecha,LocalTime hora, i
 
 @Override
 public String toString() {
-	return "Entrada [Entrada n° = "+id+",descripcion= " + show + ", fecha= " 
+	return "Entrada [Entrada nÂ° = "+id+",descripcion= " + show + ", fecha= " 
 + fecha + ", hora= " + hora + ", duracion= " + duracion + "]";
 }
 
