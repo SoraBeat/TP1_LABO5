@@ -3,41 +3,51 @@ package dominio;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import clases.Actores;
+import clases.Deporte;
+import clases.Entrada;
+import clases.EntradaInfantil;
+import clases.Teatro;
 
 public class Principal {
-	
+
 	public static void main(String[] args) {
 		
-		//entrada 1 creada con constructor vacio
+		//Deporte
+		Entrada dept[] = new Deporte[2];
 		
-		LocalTime horaEntrada = LocalTime.of(15, 30);
-		LocalDate fechaEntrada = LocalDate.of(2023,3,27);
-		Entrada entrada1 = new Entrada();
+		dept[0] = new Deporte("Futbol", true,"Super clasico", LocalDate.of(2023, 3, 28),LocalTime.of(18, 30), 120);
+		dept[1] = new Deporte("Hockey", false,"Hockey internacional!", LocalDate.of(2023, 3, 28),LocalTime.of(18, 30), 60);
 		
-		//entrada 1 cargada con setters
-		entrada1.setShow("show medieval");
-		entrada1.setFecha(fechaEntrada);
-		entrada1.setHora(horaEntrada);
-		entrada1.setDuracion(1);
 		
-		//entrada 1 mostrada con getters
-		System.out.println("entrada n°"+entrada1.getId()+" descripcion = "+entrada1.getShow()+" hora = "+entrada1.getHora()+" fecha = "+entrada1.getFecha()+" duracion = "+entrada1.getDuracion());
+		//Entrada infantil
+		Entrada ent[] = new EntradaInfantil[2];
+		ent[0] = new EntradaInfantil("Disney", LocalDate.of(2023, 3, 28),LocalTime.of(18, 30), 80, false, false);
+		ent[1] = new EntradaInfantil("La bella y la bestia", LocalDate.of(2023, 7, 28),LocalTime.of(14, 30), 80,true, true);
+
+		//Teatro
+		Actores[] act = new Actores[3];
 		
-		//entrada 2 creada con metodo crearEntrada
-		horaEntrada = LocalTime.of(20, 30);
-		fechaEntrada = LocalDate.of(2023,3,25);
+		act[0] = new Actores("Lucia", "Cavana", 22);
+		act[1] = new Actores("Ramiro", "Gonzales",32);
+		act[2] = new Actores("Florencia", "Ramirez", 29);
 		
-		Entrada entrada2 = Entrada.crearEntrada("show infantil",fechaEntrada,horaEntrada,2);
+		Entrada teatro[] = new Teatro[2];
+		teatro[0] = new Teatro("Drama","la sirenita", LocalDate.of(2023, 7, 28),LocalTime.of(14, 30), 80, act);
+		teatro[1] = new Teatro("Comedia","Como niños", LocalDate.of(2023, 7, 28),LocalTime.of(14, 30), 80, act);
 		
-		//entrada 2 mostrada con toString
-		System.out.println(entrada2.toString());
+		// Mostrar por consola resutlados
+		for (Entrada entrada : dept) {
+			System.out.println(entrada);
+		}
+
+		for (Entrada entrada : ent) {
+			System.out.println(entrada);
+		}
 		
-		//entrada 3 creada con constructor con parametros
-		horaEntrada = LocalTime.of(17, 30);
-		fechaEntrada = LocalDate.of(2023,3,30);
-		Entrada entrada3 = new Entrada("futbol juvenil 2023",fechaEntrada,horaEntrada,3);
-		//entrada 3 mostrada con getters
-		System.out.println("entrada n°"+entrada3.getId()+" descripcion = "+entrada3.getShow()+" hora = "+entrada3.getHora()+" fecha = "+entrada3.getFecha()+" duracion = "+entrada3.getDuracion());
+		for (Entrada entrada : teatro) {
+			System.out.println(entrada);
+		}
 	}
-	
+
 }
