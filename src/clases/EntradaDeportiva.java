@@ -12,10 +12,10 @@ public class EntradaDeportiva extends Entrada {
 		this.deporte = new Deporte();
 	}
 
-	public EntradaDeportiva(String nombreShow, LocalDate fecha, LocalTime hora, int duracion, double costoFinal,
-			Deporte deporte) {
-		super(nombreShow, fecha, hora, duracion, costoFinal);
+	public EntradaDeportiva(String nombreShow, LocalDate fecha, LocalTime hora, int duracion, Deporte deporte) {
+		super(nombreShow, fecha, hora, duracion);
 		this.deporte = deporte;
+		this.setCostoFinal(this.calcularPrecio());
 	}
 
 	// Getters y setters
@@ -30,12 +30,33 @@ public class EntradaDeportiva extends Entrada {
 	// Metodos
 	@Override
 	public float calcularPrecio() {
-		float costo = deporte.getCostoFijo();
+		/*float costo = deporte.getCostoFijo();
 		if (deporte.isEsInternacional()) {
 			costo += costo * 0.3;
 		}
 		super.setCostoFinal(costo);
-		return costo;
+		return costo;*/
+		float costoBase;
+
+        switch (deporte.getNombreDeporte().toUpperCase()) {
+            case "FUTBOL":
+                costoBase = 300;
+                break;
+            case "RUGBY":
+                costoBase = 450;
+                break;
+            case "HOCKEY":
+                costoBase = 380;
+                break;
+            default:
+                throw new IllegalArgumentException("Deporte no válido");
+        }
+
+        if (deporte.isEsInternacional() == true) {
+            costoBase *= 1.3;
+        }
+
+        return costoBase;
 	}
 
 	@Override

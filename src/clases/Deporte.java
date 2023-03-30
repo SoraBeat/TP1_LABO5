@@ -12,10 +12,9 @@ public class Deporte {
 		costoFijo=0;
 		esInternacional=false;
 	}
-	public Deporte(String nombreDeporte, float costoFijo, boolean esInternacional) {
+	public Deporte(String nombreDeporte, boolean esInternacional) {
 		super();
 		this.nombreDeporte = nombreDeporte;
-		this.costoFijo = costoFijo;
 		this.esInternacional = esInternacional;
 	}
 
@@ -41,8 +40,8 @@ public class Deporte {
 	//Metodos
 	@Override
 	public String toString() {
-		return " nombreDeporte=" + nombreDeporte + ", costoFijo=" + costoFijo + ", esInternacional="
-				+ esInternacional;
+		return " nombreDeporte=" + nombreDeporte + ", esInternacional="
+				+ (esInternacional ? "Si" : "No");
 	}
 
 }

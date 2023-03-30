@@ -24,7 +24,7 @@ public abstract class Entrada {
 		costoFinal = 0;
 	}
 
-	public Entrada(String nombreShow, LocalDate fecha, LocalTime hora, int duracion, double costoFinal) {
+	public Entrada(String nombreShow, LocalDate fecha, LocalTime hora, int duracion) {
 		super();
 		count++;
 		id = count;
@@ -32,7 +32,6 @@ public abstract class Entrada {
 		this.fecha = fecha;
 		this.hora = hora;
 		this.duracion = duracion;
-		this.costoFinal = costoFinal;
 	}
 
 	// getters y setters
