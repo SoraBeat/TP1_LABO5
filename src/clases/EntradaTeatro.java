@@ -10,6 +10,7 @@ public class EntradaTeatro extends Entrada {
 	public EntradaTeatro(String nombreShow, LocalDate fecha, LocalTime hora, int duracion, Teatro teatro) {
 		super(nombreShow, fecha, hora, duracion);		
 		this.teatro=teatro;
+		this.setCostoFinal(calcularPrecio());
 	}
 	
 	public Teatro getTeatro() {
@@ -25,7 +26,7 @@ public class EntradaTeatro extends Entrada {
 	@Override
 	public float calcularPrecio() {
 		// TODO Auto-generated method stub
-		return 0;
+		return (float) 1350.50;
 	}
 
 
