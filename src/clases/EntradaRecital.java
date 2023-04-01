@@ -15,6 +15,7 @@ public class EntradaRecital extends Entrada {
 		super(nombreShow, fecha, hora, duracion);
 		this.bandaPrincipal = bandaPrincipal;
 		this.esVip = esVip;
+		if(bandasSoporte.length > 2) throw new IllegalArgumentException("Puede haber hasta 2 bandas de soporte");
 		this.bandasSoporte = bandasSoporte;
 		this.setCostoFinal(calcularPrecio());
 	}

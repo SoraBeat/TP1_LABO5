@@ -2,14 +2,12 @@ package clases;
 
 public class Deporte {
 	private String nombreDeporte;
-	private float costoFijo;
 	private boolean esInternacional;
 	
 	//Constructores
 	public Deporte() {
 		super();
 		nombreDeporte="Ninguno";
-		costoFijo=0;
 		esInternacional=false;
 	}
 	public Deporte(String nombreDeporte, boolean esInternacional) {
@@ -24,12 +22,6 @@ public class Deporte {
 	}
 	public void setNombreDeporte(String nombreDeporte) {
 		this.nombreDeporte = nombreDeporte;
-	}
-	public float getCostoFijo() {
-		return costoFijo;
-	}
-	public void setCostoFijo(float costoFijo) {
-		this.costoFijo = costoFijo;
 	}
 	public boolean isEsInternacional() {
 		return esInternacional;

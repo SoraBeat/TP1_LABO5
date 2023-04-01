@@ -6,6 +6,7 @@ import java.time.LocalTime;
 public class EntradaTeatro extends Entrada {
 
 	private Teatro teatro;
+	private final float costoFijo = (float) 1350.50;
 	
 	public EntradaTeatro(String nombreShow, LocalDate fecha, LocalTime hora, int duracion, Teatro teatro) {
 		super(nombreShow, fecha, hora, duracion);		
@@ -26,7 +27,7 @@ public class EntradaTeatro extends Entrada {
 	@Override
 	public float calcularPrecio() {
 		// TODO Auto-generated method stub
-		return (float) 1350.50;
+		return costoFijo;
 	}
 
 

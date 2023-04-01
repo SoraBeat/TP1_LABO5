@@ -36,7 +36,7 @@ public class EntradaDeportiva extends Entrada {
 		}
 		super.setCostoFinal(costo);
 		return costo;*/
-		float costoBase;
+		float costoBase = 0;
 
         switch (deporte.getNombreDeporte().toUpperCase()) {
             case "FUTBOL":

@@ -28,6 +28,7 @@ public class Principal {
 		actores[0]=actor1;
 		actores[1]=actor2;
 		actores[2]=actor3;
+		//actores[3]=actor3;
 
 		Teatro teatro1=new Teatro("Gran Rex","Comedia",actores);
 		
