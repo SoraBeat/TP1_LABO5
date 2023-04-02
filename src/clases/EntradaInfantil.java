@@ -23,4 +23,20 @@ public class EntradaInfantil extends Entrada{
 		return "EntradaInfantil: "+super.toString()+". Es menor de 8: "+ (esMenorDe8 ? "Si" : "No") + ". Incluye souvenir :" + (incluyeSouvenir ? "Si" : "No") ;
 	}
 
+	public boolean isEsMenorDe8() {
+		return esMenorDe8;
+	}
+
+	public void setEsMenorDe8(boolean esMenorDe8) {
+		this.esMenorDe8 = esMenorDe8;
+	}
+
+	public boolean isIncluyeSouvenir() {
+		return incluyeSouvenir;
+	}
+
+	public void setIncluyeSouvenir(boolean incluyeSouvenir) {
+		this.incluyeSouvenir = incluyeSouvenir;
+	}
+
 }

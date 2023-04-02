@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Arrays;
 
-public class EntradaRecital extends Entrada {
+public class EntradaRecital extends Entrada implements Validacion{
 	private Banda bandaPrincipal;
 	private Boolean esVip;
 	private Banda bandasSoporte[];
@@ -15,7 +15,7 @@ public class EntradaRecital extends Entrada {
 		super(nombreShow, fecha, hora, duracion);
 		this.bandaPrincipal = bandaPrincipal;
 		this.esVip = esVip;
-		if(bandasSoporte.length > 2) throw new IllegalArgumentException("Puede haber hasta 2 bandas de soporte");
+		Validacion(bandasSoporte);
 		this.bandasSoporte = bandasSoporte;
 		this.setCostoFinal(calcularPrecio());
 	}
@@ -63,6 +63,14 @@ public class EntradaRecital extends Entrada {
 	@Override
 	public float calcularPrecio() {
 		return this.esVip ?  1500 : 800;
+	}
+
+	@Override
+	public void Validacion(Object[] aArray){
+		//boolean estado = true;
+		if(aArray.length > 2) {//estado=false; 
+		throw new IllegalArgumentException("Puede haber hasta 2 bandas de soporte");}
+		//return estado;
 	}
 
 }

@@ -1,7 +1,7 @@
 package clases;
 
 
-public class Teatro {
+public class Teatro implements Validacion{
 	private String nombre;
     private String genero;
 	private ActorPrincipal[] actoresPrincipales=new ActorPrincipal[3];
@@ -9,7 +9,7 @@ public class Teatro {
 	public Teatro(String nombre, String genero, ActorPrincipal[] actoresPrincipales) {
 	    this.nombre=nombre;
 	    this.genero=genero;
-	    if(actoresPrincipales.length > 3) throw new IllegalArgumentException("Un teatro puede tener hasta 3 actores principales.");
+	    Validacion(actoresPrincipales);
 	    this.actoresPrincipales=actoresPrincipales;
 	}
 	public String getNombre() {
@@ -38,6 +38,11 @@ public class Teatro {
 			  }
 		
 		return " Nombre Teatro: "+nombre+ " Genero : " + genero + listadoActores;
+	}
+	@Override
+	public void Validacion(Object[] aArray){
+		if(aArray.length > 3) {
+		throw new IllegalArgumentException("Un teatro puede tener hasta 3 actores principales.");}
 	}
 
 
