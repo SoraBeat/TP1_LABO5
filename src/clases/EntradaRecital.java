@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Arrays;
 
-public class EntradaRecital extends Entrada implements Validacion{
+public class EntradaRecital extends Entrada implements IValidacion{
 	private Banda bandaPrincipal;
 	private Boolean esVip;
 	private Banda bandasSoporte[];

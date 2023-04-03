@@ -1,7 +1,7 @@
 package clases;
 
 
-public class Teatro implements Validacion{
+public class Teatro implements IValidacion{
 	private String nombre;
     private String genero;
 	private ActorPrincipal[] actoresPrincipales=new ActorPrincipal[3];

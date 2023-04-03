@@ -1,5 +1,5 @@
 package clases;
 
-public interface Validacion {
+public interface IValidacion {
 public void Validacion (Object[] aArray);
 }
